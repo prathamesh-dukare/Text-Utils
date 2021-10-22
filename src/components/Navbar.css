@@ -3,3 +3,8 @@
     text-decoration: none;
     color: aqua;
 }
+#NavUl{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
