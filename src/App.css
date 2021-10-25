@@ -3,3 +3,8 @@
     text-decoration: none;
     color: aqua;
 }
+.footer{
+    position: fixed;
+    bottom: 1px;
+    width: 100%;
+}

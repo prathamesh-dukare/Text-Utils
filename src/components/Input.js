@@ -19,7 +19,9 @@ export default function Input(props) {
         let capitalizedText = currentTextValue.toLowerCase()
         newText(capitalizedText)
     }
-
+    const clearTextHandler = () =>{
+        newText("")
+    }
     return (
         <>
         <div className="input-group input-group-lg my-4">
@@ -27,9 +29,10 @@ export default function Input(props) {
             <input type="text" value = {currentTextValue} onChange ={onchangeMethod} itemID="disabledTextInput" className="form-control disabled" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
         </div>
         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-            <button type="button" class="btn btn-danger mx-2" onClick = {capHandler}>Capitalize</button>
+            <button type="button" class="btn btn-primary mx-2" onClick = {capHandler}>Capitalize</button>
             <button type="button" class="btn btn-warning mx-2" onClick = {upperHandler}>UpperCase</button>
             <button type="button" class="btn btn-success mx-2" onClick = {lowerHandler}>LowerCase</button>
+            <button type="button" class="btn btn-danger mx-2" onClick = {clearTextHandler}>Clear Text</button>
         </div>
         <div className="container my-4">
             <h3>Your Text Summery</h3>

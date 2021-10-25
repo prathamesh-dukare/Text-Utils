@@ -20,12 +20,13 @@ export default function Navbar(props) {
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Services
+                                Functions
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a className="dropdown-item" href="#">Convert to Uppercase</a></li>
                                 <li><a className="dropdown-item" href="#">Convert to Lowercase</a></li>
-                                <li><a className="dropdown-item" href="#">Convert to Capitalize</a></li>
+                                <li><a className="dropdown-item" href="#">Convert to Capitalized</a></li>
+                                <li><a className="dropdown-item" href="#">Clear Text</a></li>
                             </ul>
                         </li>
                     </ul>
