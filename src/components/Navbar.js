@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 import PropTypes from 'prop-types'
 
 
@@ -31,8 +31,8 @@ export default function Navbar(props) {
                         </li>
                     </ul>
                     <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class ="btn btn-outline-success">Search</button>
+                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success">Search</button>
                     </form>
                 </div>
             </div>
