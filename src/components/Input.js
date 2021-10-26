@@ -24,18 +24,22 @@ export default function Input(props) {
     }
     // darkMOde functions
     const [lightOrDark, setlightOrDark] = useState("Dark")
-    const [currentStyle, setcurrentStyle] = useState({})
+    // const [currentStyle, setcurrentStyle] = useState({})
     const darkModeHandler = () => {
         if (lightOrDark === "Dark") {
-            let styleObj = {
-                color: "white",
-                backgroundColor: "black"
-            }
-            setcurrentStyle(styleObj)
+            // let styleObj = {
+            //     color: "white",
+            //     backgroundColor: "black",
+            // }
+            document.body.style.backgroundColor = "#363e45"
+            document.body.style.color = "white"
+            // setcurrentStyle(styleObj)
             setlightOrDark("Light")
         }
         else if (lightOrDark === "Light") {
-            setcurrentStyle({})
+            // setcurrentStyle({})
+            document.body.style.backgroundColor = "white"
+            document.body.style.color = "black"
             setlightOrDark("Dark")
         }
     }
@@ -46,7 +50,7 @@ export default function Input(props) {
         navigator.clipboard.writeText(text.value)
     }
     return (
-        <div className = "main-div py-3 px-5" style={currentStyle}>
+        <div className = "main-div py-3 px-5" style={{}}>
             <div className="input-group input-group-lg my-4">
                 <span className="input-group-text" id="inputGroup-sizing-lg">{props.textValue}</span>
                 
