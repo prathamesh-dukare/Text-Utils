@@ -1,8 +1,21 @@
-// import React , {useState} from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
 
 export default function Navbar(props) {
+    const [lightOrDark, setlightOrDark] = useState("Dark")
+    const switchModes = () => {
+        if (lightOrDark === "Dark") {
+            document.body.style.backgroundColor = "#363e45"
+            document.body.style.color = "white"
+            setlightOrDark("Light")
+        } else if (lightOrDark === "Light") {
+            document.body.style.backgroundColor = "white"
+            document.body.style.color = "black"
+            setlightOrDark("Dark")
+        }
+
+    }
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
@@ -31,8 +44,10 @@ export default function Navbar(props) {
                         </li>
                     </ul>
                     <form className="d-flex">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success">Search</button>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" onClick={switchModes} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                            <label class="form-check-label text-light" htmlFor="flexSwitchCheckDefault">Switch {lightOrDark} Mode</label>
+                        </div>
                     </form>
                 </div>
             </div>

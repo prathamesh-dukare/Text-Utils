@@ -8,3 +8,13 @@
     bottom: 1px;
     width: 100%;
 }
+pre{
+    font-family: -apple-system;
+    font-size: 1.2em;
+}
+.flex{
+    display: flex;
+}
+.preview-text:hover{
+    
+}

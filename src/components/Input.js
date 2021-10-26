@@ -8,7 +8,12 @@ export default function Input(props) {
         newText(newValue)
     }
     const capHandler = () => {
-        let capitalizedText = currentTextValue
+        let splittedTextArray = currentTextValue.split(" ")
+        let capitalizedTextArray = splittedTextArray.map((i) => {
+            let capitalizedWord = i.charAt(0).toUpperCase() + i.slice(1)
+            return capitalizedWord
+        })
+        let capitalizedText = capitalizedTextArray.join(" ")
         newText(capitalizedText)
     }
     const upperHandler = () => {
@@ -22,39 +27,36 @@ export default function Input(props) {
     const clearTextHandler = () => {
         newText("")
     }
-    // darkMOde functions
-    const [lightOrDark, setlightOrDark] = useState("Dark")
-    // const [currentStyle, setcurrentStyle] = useState({})
-    const darkModeHandler = () => {
-        if (lightOrDark === "Dark") {
-            // let styleObj = {
-            //     color: "white",
-            //     backgroundColor: "black",
-            // }
-            document.body.style.backgroundColor = "#363e45"
-            document.body.style.color = "white"
-            // setcurrentStyle(styleObj)
-            setlightOrDark("Light")
-        }
-        else if (lightOrDark === "Light") {
-            // setcurrentStyle({})
-            document.body.style.backgroundColor = "white"
-            document.body.style.color = "black"
-            setlightOrDark("Dark")
-        }
-    }
     // copyText Functions 
-    const copyTextHandler = () =>{
+    const copyTextHandler = () => {
         let text = document.getElementById("input-text")
         text.select()
         navigator.clipboard.writeText(text.value)
     }
+    // extraspaces Functions
+    const extraSpacesHandler = () => {
+        let modifiedText = currentTextValue.split(/[ ]+/).join(" ")
+        newText(modifiedText)
+    }
+    //show info functions
+    let infoFlag = false
+    const showInfo = () => {
+        const infoTag = document.getElementById("info")
+        if (!infoFlag) {
+            infoTag.innerText = "( Extra spaces auto-removed for readability )"
+            infoFlag = true
+        } else if (infoFlag) {
+            infoTag.innerText = ""
+            infoFlag = false
+        }
+
+    }
     return (
-        <div className = "main-div py-3 px-5" style={{}}>
+        <div className="main-div py-3 px-5" style={{}}>
             <div className="input-group input-group-lg my-4">
                 <span className="input-group-text" id="inputGroup-sizing-lg">{props.textValue}</span>
-                
-                <input type="text" value={currentTextValue} onChange={onchangeMethod} itemID="disabledTextInput" className="form-control disabled" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" id ="input-text"/>
+
+                <input type="text" value={currentTextValue} onChange={onchangeMethod} itemID="disabledTextInput" className="form-control disabled" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" id="input-text" />
                 <button className="nav-item btn-primary" onClick={copyTextHandler}>Copy</button>
             </div>
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
@@ -62,8 +64,7 @@ export default function Input(props) {
                 <button type="button" class="btn btn-warning mx-2" onClick={upperHandler}>UpperCase</button>
                 <button type="button" class="btn btn-success mx-2" onClick={lowerHandler}>LowerCase</button>
                 <button type="button" class="btn btn-danger mx-2" onClick={clearTextHandler}>Clear Text</button>
-                <br />
-                <button className="nav-item btn-secondary" onClick={darkModeHandler}>Toggle {lightOrDark} Mode</button>
+                <button type="button" class="btn btn-primary mx-2" onClick={extraSpacesHandler}>Remove Extra Spaces</button>
             </div>
 
             <div className="container my-4">
@@ -71,8 +72,14 @@ export default function Input(props) {
                 <h4>Word Count</h4>
                 <p>{currentTextValue.split(" ").length - 1} Words and {currentTextValue.length} Characters</p>
                 <p>{0.008 * currentTextValue.split(" ").length.toFixed("2")} Minutes Read</p>
-                <h4>Text Preview</h4>
+                <div className="container flex">
+                    <h4>Text Preview</h4>
+                    <button className="preview-text mx-2" onClick={showInfo}>i</button>
+                    <p id="info"></p>
+                </div>
                 <p>{currentTextValue}</p>
+
+
             </div>
         </div>
     )
