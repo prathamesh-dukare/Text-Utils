@@ -9,10 +9,12 @@ export default function Navbar(props) {
             document.body.style.backgroundColor = "#363e45"
             document.body.style.color = "white"
             setlightOrDark("Light")
+            document.title = document.title + "-Dark"
         } else if (lightOrDark === "Light") {
             document.body.style.backgroundColor = "white"
             document.body.style.color = "black"
             setlightOrDark("Dark")
+            document.title = "Text Utils"
         }
     }
     return (
