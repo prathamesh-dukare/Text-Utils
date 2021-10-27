@@ -1,20 +1,27 @@
-#NavUl li{
+#NavUl li {
     list-style-type: none;
     text-decoration: none;
     color: aqua;
 }
-.footer{
+.footer {
     position: fixed;
     bottom: 1px;
     width: 100%;
 }
-pre{
+pre {
     font-family: -apple-system;
     font-size: 1.2em;
 }
-.flex{
+.flex {
     display: flex;
 }
-.preview-text:hover{
-    
+.alert-primary {
+    width: 19%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    right: -28.5em;
+    position: absolute;
+    top: 9.5em;
+    left: 28em;
 }

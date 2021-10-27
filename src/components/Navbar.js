@@ -14,7 +14,6 @@ export default function Navbar(props) {
             document.body.style.color = "black"
             setlightOrDark("Dark")
         }
-
     }
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -40,6 +39,7 @@ export default function Navbar(props) {
                                 <li><a className="dropdown-item" href="#">Convert to Lowercase</a></li>
                                 <li><a className="dropdown-item" href="#">Convert to Capitalized</a></li>
                                 <li><a className="dropdown-item" href="#">Clear Text</a></li>
+                                <li><a className="dropdown-item" href="#">Remove Extra Spaces</a></li>
                             </ul>
                         </li>
                     </ul>

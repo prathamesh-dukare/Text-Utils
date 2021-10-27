@@ -32,6 +32,7 @@ export default function Input(props) {
         let text = document.getElementById("input-text")
         text.select()
         navigator.clipboard.writeText(text.value)
+        props.callAlert("Text Copied To Clipboard ~")
     }
     // extraspaces Functions
     const extraSpacesHandler = () => {
@@ -39,17 +40,13 @@ export default function Input(props) {
         newText(modifiedText)
     }
     //show info functions
-    let infoFlag = false
     const showInfo = () => {
         const infoTag = document.getElementById("info")
-        if (!infoFlag) {
-            infoTag.innerText = "( Extra spaces auto-removed for readability )"
-            infoFlag = true
-        } else if (infoFlag) {
-            infoTag.innerText = ""
-            infoFlag = false
-        }
-
+        infoTag.innerText = "( Extra spaces auto-removed for readability )"
+    }
+    const hideInfo = () => {
+        const infoTag = document.getElementById("info")
+        infoTag.innerText = ""
     }
     return (
         <div className="main-div py-3 px-5" style={{}}>
@@ -74,10 +71,10 @@ export default function Input(props) {
                 <p>{0.008 * currentTextValue.split(" ").length.toFixed("2")} Minutes Read</p>
                 <div className="container flex">
                     <h4>Text Preview</h4>
-                    <button className="preview-text mx-2" onClick={showInfo}>i</button>
+                    <button className="preview-text mx-2" onMouseOver={showInfo} onMouseLeave={hideInfo}>i</button>
                     <p id="info"></p>
                 </div>
-                <p>{currentTextValue}</p>
+                <p className="my-3 text-preview">{currentTextValue}</p>
 
 
             </div>
