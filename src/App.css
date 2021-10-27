@@ -3,18 +3,22 @@
     text-decoration: none;
     color: aqua;
 }
+
 .footer {
     position: fixed;
     bottom: 1px;
     width: 100%;
 }
+
 pre {
     font-family: -apple-system;
     font-size: 1.2em;
 }
+
 .flex {
     display: flex;
 }
+
 .alert-primary {
     width: 19%;
     display: block;
@@ -24,4 +28,9 @@ pre {
     position: absolute;
     top: 9.5em;
     left: 28em;
+}
+
+.about-container {
+    width: 50%;
+    font-size: 22px;
 }
