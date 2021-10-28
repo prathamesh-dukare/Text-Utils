@@ -33,22 +33,22 @@ export default function Navbar(props) {
                             <Link className="nav-link active" to="/about">About App</Link>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Functions
+                            <a className="nav-link active dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Features
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="#">Convert to Uppercase</a></li>
-                                <li><a className="dropdown-item" href="#">Convert to Lowercase</a></li>
-                                <li><a className="dropdown-item" href="#">Convert to Capitalized</a></li>
-                                <li><a className="dropdown-item" href="#">Clear Text</a></li>
-                                <li><a className="dropdown-item" href="#">Remove Extra Spaces</a></li>
+                                <li className="dropdown-item">Convert to Uppercase</li>
+                                <li className="dropdown-item">Convert to Lowercase</li>
+                                <li className="dropdown-item">Convert to Capitalized</li>
+                                <li className="dropdown-item">Clear Text</li>
+                                <li className="dropdown-item">Remove Extra Spaces</li>
                             </ul>
                         </li>
                     </ul>
                     <form className="d-flex">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" onClick={switchModes} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-                            <label class="form-check-label text-light" htmlFor="flexSwitchCheckDefault">Switch {lightOrDark} Mode</label>
+                        <div className="form-check form-switch">
+                            <input className="form-check-input" onClick={switchModes} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                            <label className="form-check-label text-light" htmlFor="flexSwitchCheckDefault">Switch {lightOrDark} Mode</label>
                         </div>
                     </form>
                 </div>

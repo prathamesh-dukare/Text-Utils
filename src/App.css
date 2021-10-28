@@ -4,11 +4,11 @@
     color: aqua;
 }
 
-.footer {
-    position: fixed;
-    bottom: 1px;
-    width: 100%;
+.button-flex {
+    display: inline-flex;
+    flex-wrap: wrap;
 }
+
 
 pre {
     font-family: -apple-system;
@@ -32,8 +32,9 @@ pre {
 }
 
 .about-container {
-    width: 50%;
     font-size: 22px;
+    width: 59vw;
+    margin: 1.5em auto;
 }
 
 .i-btn {
@@ -45,6 +46,30 @@ pre {
 }
 
 .text-preview {
-    margin-top: 1 rem;
-    margin-bottom: 3 rem;
+    margin-top: 1 rem !important;
+    margin-bottom: 3 rem !important;
+}
+.footer {
+    position: fixed;
+    bottom: 1px;
+    width: 100%;
+}
+/* Media Queries for smaller screans  */
+@media screen and (max-width : 805px) {
+    .about-container {
+        width: 76vw;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width : 450px) {
+    .about-container {
+        width: 86vw;
+        font-size: 18px;
+    }
+}
+@media screen and (max-width : 750px) {
+    .footer-flex{
+        display: flex;
+        justify-content: center !important;
+    }
 }

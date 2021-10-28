@@ -32,6 +32,7 @@ export default function Input(props) {
         let text = document.getElementById("input-text")
         text.select()
         navigator.clipboard.writeText(text.value)
+        document.getSelection().removeAllRanges()
         props.callAlert("Text Copied To Clipboard ~")
     }
     // extraspaces Functions
@@ -54,14 +55,14 @@ export default function Input(props) {
                 <span className="input-group-text" id="inputGroup-sizing-lg">{props.textValue}</span>
 
                 <input type="text" value={currentTextValue} onChange={onchangeMethod} itemID="disabledTextInput" className="form-control disabled" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" id="input-text" />
-                <button className="nav-item btn-primary" onClick={copyTextHandler}>Copy</button>
+                <button className="nav-item btn-primary" disabled={currentTextValue.length<=0} onClick={copyTextHandler}>Copy</button>
             </div>
-            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                <button type="button" class="btn btn-primary mx-2" onClick={capHandler}>Capitalize</button>
-                <button type="button" class="btn btn-warning mx-2" onClick={upperHandler}>UpperCase</button>
-                <button type="button" class="btn btn-success mx-2" onClick={lowerHandler}>LowerCase</button>
-                <button type="button" class="btn btn-danger mx-2" onClick={clearTextHandler}>Clear Text</button>
-                <button type="button" class="btn btn-primary mx-2" onClick={extraSpacesHandler}>Remove Extra Spaces</button>
+            <div className="btn-group button-flex" role="group" aria-label="Basic mixed styles example">
+                <button type="button" className="btn btn-primary mx-2 my-2" disabled={currentTextValue.length<=0} onClick={capHandler}>Capitalize</button>
+                <button type="button" className="btn btn-warning mx-2 my-2" disabled={currentTextValue.length<=0}  onClick={upperHandler}>UpperCase</button>
+                <button type="button" className="btn btn-success mx-2 my-2" disabled={currentTextValue.length<=0}  onClick={lowerHandler}>LowerCase</button>
+                <button type="button" className="btn btn-danger mx-2 my-2" disabled={currentTextValue.length<=0}  onClick={clearTextHandler}>Clear Text</button>
+                <button type="button" className="btn btn-primary mx-2 my-2" disabled={currentTextValue.length<=0}  onClick={extraSpacesHandler}>Remove Extra Spaces</button>
             </div>
 
             <div className="container my-4">
@@ -71,7 +72,7 @@ export default function Input(props) {
                 <p>{0.008 * currentTextValue.split(" ").length.toFixed("2")} Minutes Read</p>
                 <div className="container flex">
                     <h4>Text Preview</h4>
-                    <span className="i-btn mx-2" onMouseOver={showInfo} onMouseLeave={hideInfo}> <strong>( i )</strong></span>
+                    <span className="i-btn mx-2" onClick ={showInfo} onMouseOver={showInfo} onMouseLeave={hideInfo}> <strong>( i )</strong></span>
                     <p id="info"></p>
                 </div>
                 <p className="text-preview">{currentTextValue}</p>
