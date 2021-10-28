@@ -17,6 +17,7 @@ pre {
 
 .flex {
     display: flex;
+    padding: 0;
 }
 
 .alert-primary {
@@ -33,4 +34,17 @@ pre {
 .about-container {
     width: 50%;
     font-size: 22px;
+}
+
+.i-btn {
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    bottom: 5 px;
+    right: 5 px;
+}
+
+.text-preview {
+    margin-top: 1 rem;
+    margin-bottom: 3 rem;
 }

@@ -71,10 +71,10 @@ export default function Input(props) {
                 <p>{0.008 * currentTextValue.split(" ").length.toFixed("2")} Minutes Read</p>
                 <div className="container flex">
                     <h4>Text Preview</h4>
-                    <button className="preview-text mx-2" onMouseOver={showInfo} onMouseLeave={hideInfo}>i</button>
+                    <span className="i-btn mx-2" onMouseOver={showInfo} onMouseLeave={hideInfo}> <strong>( i )</strong></span>
                     <p id="info"></p>
                 </div>
-                <p className="my-3 text-preview">{currentTextValue}</p>
+                <p className="text-preview">{currentTextValue}</p>
 
 
             </div>
