@@ -10,25 +10,18 @@
 }
 
 
-pre {
-    font-family: -apple-system;
-    font-size: 1.2em;
-}
-
 .flex {
     display: flex;
     padding: 0;
 }
 
 .alert-primary {
-    width: 19%;
+    width: fit-content;
     display: block;
-    margin: 0 auto;
-    position: relative;
-    right: -28.5em;
     position: absolute;
-    top: 9.5em;
-    left: 28em;
+    top: 3.5em;
+    left: 44em;
+    height: 3em;
 }
 
 .about-container {
@@ -41,19 +34,21 @@ pre {
     font-size: 16px;
     cursor: pointer;
     position: relative;
-    bottom: 5 px;
-    right: 5 px;
+    bottom: 5px;
+    right: 5px;
 }
 
 .text-preview {
-    margin-top: 1 rem !important;
-    margin-bottom: 3 rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: 3rem !important;
 }
+
 .footer {
     position: fixed;
     bottom: 1px;
     width: 100%;
 }
+
 /* Media Queries for smaller screans  */
 @media screen and (max-width : 805px) {
     .about-container {
@@ -61,15 +56,53 @@ pre {
         font-size: 20px;
     }
 }
+
 @media screen and (max-width : 450px) {
     .about-container {
         width: 86vw;
         font-size: 18px;
     }
 }
+
 @media screen and (max-width : 750px) {
-    .footer-flex{
+    .footer-flex {
         display: flex;
         justify-content: center !important;
+    }
+
+    .input-flex {
+        flex-direction: column;
+    }
+
+    input#input-text {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width : 975px) {
+    .alert-primary {
+        left: 25em;
+    }
+}
+
+@media screen and (max-width : 664px) {
+    .alert-primary {
+        left: 15em;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .alert-primary {
+        left: 8em;
+    }
+}
+
+@media screen and (max-width : 495px) {
+    .alert-primary {
+        left: 5em;
+    }
+
+    #width100 {
+        width: 100%;
     }
 }

@@ -10,7 +10,7 @@ export default function Input(props) {
     const capHandler = () => {
         let splittedTextArray = currentTextValue.split(" ")
         let capitalizedTextArray = splittedTextArray.map((i) => {
-            let capitalizedWord = i.charAt(0).toUpperCase() + i.slice(1)
+            let capitalizedWord = i.charAt(0).toUpperCase() + i.slice(1).toLowerCase()
             return capitalizedWord
         })
         let capitalizedText = capitalizedTextArray.join(" ")
@@ -29,11 +29,9 @@ export default function Input(props) {
     }
     // copyText Functions 
     const copyTextHandler = () => {
-        let text = document.getElementById("input-text")
-        text.select()
-        navigator.clipboard.writeText(text.value)
+        navigator.clipboard.writeText(currentTextValue)
         document.getSelection().removeAllRanges()
-        props.callAlert("Text Copied To Clipboard ~")
+        props.callAlert("Text Copied To Clipboard")
     }
     // extraspaces Functions
     const extraSpacesHandler = () => {
@@ -51,10 +49,10 @@ export default function Input(props) {
     }
     return (
         <div className="main-div py-3 px-5" style={{}}>
-            <div className="input-group input-group-lg my-4">
+            <div className="input-group input-group-lg my-4 input-flex">
                 <span className="input-group-text" id="inputGroup-sizing-lg">{props.textValue}</span>
 
-                <input type="text" value={currentTextValue} onChange={onchangeMethod} itemID="disabledTextInput" className="form-control disabled" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" id="input-text" />
+                <input type="text" value={currentTextValue} onChange={onchangeMethod} itemID="disabledTextInput" className="form-control disabled width100" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" id="input-text" />
                 <button className="nav-item btn-primary" disabled={currentTextValue.length<=0} onClick={copyTextHandler}>Copy</button>
             </div>
             <div className="btn-group button-flex" role="group" aria-label="Basic mixed styles example">
