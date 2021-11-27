@@ -12,9 +12,9 @@ function App() {
 	const callAlert = (message) => {
 		setAlertMsg(message)
 	}
-	// setTimeout(() => {
-	// 	setAlertMsg(null)
-	// }, 2100);
+	setTimeout(() => {
+		setAlertMsg(null)
+	}, 2100);
 	return (
 		<Router>
 			<div itemID="id">
