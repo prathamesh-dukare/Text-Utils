@@ -6,7 +6,7 @@ export default function About() {
             <h1>About Text Utils</h1>
             <p>Text utils is the text-utility app that can manipulate your text the way you want. We have features such as Capitalize, Convert to LowerCase or UpperCase, Remove Extra spaces, etc.</p>
             <p>This app is made with React as a part of the learning process. If you think you can suggest some features or report some bugs please let us know on <a href="mailto:prathameshdukaremail@gmail.com">eMail</a></p>
-            <p>Also, this project is open source so you can contribute to it on Github <a target="_blank" href="https://github.com/Prathamesh-Dukare/Text-Utils/">Github</a></p>
+            <p>Also, this project is open source so you can contribute to it on Github <a target="_blank" rel="noreferrer" href="https://github.com/Prathamesh-Dukare/Text-Utils/">Github</a></p>
         </div>
     )
 }
